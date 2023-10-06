@@ -1,8 +1,26 @@
 # text-compare
 
-a simple SPA api for comparing inputs
+a simple SPA api for comparing inputs. comes with documentation, auth, clean ui
 
-## FILLER -->
+## Project Misc
+
+uses conventional commits
+
+```
+feat
+fix
+chore
+refactor
+docs
+style
+test
+perf
+ci
+build
+revert
+```
+
+## Filler -->
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
