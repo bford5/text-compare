@@ -3,7 +3,6 @@
 import { FC, useState } from "react";
 import Button from "@/ui/btn.cmp";
 import { signIn } from "next-auth/react";
-
 import { toast } from "@/ui/toastNotification.cmp";
 
 interface SignInBtnProps {}
@@ -12,9 +11,8 @@ const SignInBtn: FC<SignInBtnProps> = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	const signInWithGoogle = async () => {
-		setIsLoading(true);
-
 		try {
+			setIsLoading(true);
 			await signIn("google");
 		} catch (error) {
 			toast({

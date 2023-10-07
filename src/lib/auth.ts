@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import GoogleProvider from "next-auth/providers/google";
 
-function getGoogleCreds() {
+function getGoogleCreds(): { clientId: string; clientSecret: string } {
 	const clientId = process.env.GOOGLE_CLIENT_ID;
 	const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
 
@@ -18,6 +18,7 @@ function getGoogleCreds() {
 }
 
 export const authOptions: NextAuthOptions = {
+	// secret: process.env.NEXTAUTH_SECRET,
 	adapter: PrismaAdapter(db),
 	session: {
 		strategy: "jwt",
@@ -27,14 +28,12 @@ export const authOptions: NextAuthOptions = {
 	},
 	providers: [
 		GoogleProvider({
-			// clientId: process.env.GOOGLE_CLIENT_ID,
-			// clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 			clientId: getGoogleCreds().clientId,
 			clientSecret: getGoogleCreds().clientSecret,
 		}),
 	],
 	callbacks: {
-		session({ token, session }) {
+		async session({ token, session }) {
 			if (token) {
 				session.user.id = token.id;
 				session.user.name = token.name;
