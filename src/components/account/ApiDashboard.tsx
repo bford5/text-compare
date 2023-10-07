@@ -7,6 +7,7 @@ import Heading from "@/ui/heading.cmp";
 import Paragraph from "@/ui/paragraph.cmp";
 import { Input } from "@/ui/input.cmp";
 import Table from "@/components/Table";
+import ApiKeyOptions from "./ApiKeyOptions";
 
 const ApiDashboard = async () => {
 	const user = await getServerSession(authOptions);
@@ -41,6 +42,10 @@ const ApiDashboard = async () => {
 				<Paragraph>Your API key:</Paragraph>
 				<Input className='w-fit truncate' readOnly value={activeApiKey.key} />
 				{/* add feat's for createNew, revoke, copyCreatedKey */}
+				<ApiKeyOptions
+					apiKeyId={activeApiKey.id}
+					apiKeyValue={activeApiKey.key}
+				/>
 			</div>
 
 			<Paragraph className='text-center md:text-left mt-4 mb-4'>
