@@ -13,10 +13,12 @@ const Navbar: FC<NavbarProps> = async () => {
 	const session = await getServerSession(authOptions);
 	return (
 		<header className='fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm flex items-center justify-between'>
-			<div className='container max-w-7xl mx-auto w-full flex justify-between items-center ml-2'>
-				<Link href='/' className={buttonVariants({ variant: "link" })}>
-					text-compare
-				</Link>
+			<div className='container max-w-7xl mx-auto w-full flex justify-between items-center'>
+				<div className='ml-2'>
+					<Link href='/' className={buttonVariants({ variant: "link" })}>
+						text-compare
+					</Link>
+				</div>
 				<div className='md:hidden mr-4'>
 					<ThemeToggle />
 				</div>

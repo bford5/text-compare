@@ -29,7 +29,7 @@ const page = async () => {
 
 	return (
 		<section className='max-w-7xl mx-auto mt-16'>
-			<h2>DASHBOARD</h2>
+			{/* <h2>DASHBOARD</h2> */}
 			{apiKey ? <ApiDashboard /> : <RequestApiKey />}
 		</section>
 	);

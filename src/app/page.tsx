@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Home() {
 	return (
 		<section className='relative h-screen flex items-center justify-center overflow-x-hidden'>
-			<div className='container pt-20 max-w-7xl mx-auto w-full h-full'>
+			<div className='container pt-8 max-w-7xl mx-auto w-full h-full'>
 				<div className='h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start'>
 					<Heading
 						size='lg'

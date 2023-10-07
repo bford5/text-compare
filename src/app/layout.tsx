@@ -23,7 +23,7 @@ export default function RootLayout({
 			<body className='min-h-screen bg-slate-50 dark:bg-slate-800'>
 				<Providers>
 					<Navbar />
-					<main>{children}</main>
+					<main className='mt-20'>{children}</main>
 					<Toaster position='bottom-center' />
 					{/* <Footer /> */}
 				</Providers>
