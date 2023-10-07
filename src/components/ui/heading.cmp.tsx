@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { classNameHelper } from "@/lib/utils";
 
 const headingVariants = cva(
-	"text-black dark:text-white text-center lg:text-left font-extrabold leading-tight tracking-tighter",
+	"text-black/95 dark:text-slate-200 text-center lg:text-left font-extrabold leading-tight tracking-tighter",
 	{
 		variants: {
 			size: {
