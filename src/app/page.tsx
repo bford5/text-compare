@@ -33,7 +33,7 @@ export default function Home() {
 						>
 							API key
 						</Link>
-						! And see our{" "}
+						! And check the{" "}
 						<Link
 							href='/docs'
 							className='underline underline-offset-2 hover:text-light-blue'
