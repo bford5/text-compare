@@ -4,10 +4,12 @@ import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 
-const redis = new Redis({
-	url: process.env.REDIS_URL,
-	token: process.env.REDIS_SECRET,
-});
+// const redis = new Redis({
+// 	url: process.env.REDIS_URL,
+// 	token: process.env.REDIS_SECRET,
+// });
+// ^^ the above is old, recent docs show the below as how to instantiate a new Redis instance
+const redis = Redis.fromEnv();
 
 const ratelimit = new Ratelimit({
 	redis,

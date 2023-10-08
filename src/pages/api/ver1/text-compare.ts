@@ -47,9 +47,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 					model: "text-embedding-ada-002",
 					input: text,
 				});
+
+				const data = res.data[0]["embedding"];
+				// ^^ referenced from https://medium.com/@basics.machinelearning/embedding-in-openai-api-b9bb52a0bd55
 				// __
-				return res.data.data[0].embedding;
+				// return res.data.data[0].embedding;
 				// ^^ the above works despite error on 2nd .data, JSON ref from openai at bottom of file
+				// ^^  CORRECTION: the above DOES NOT work, keeping commented out for record/practice/whatever
+				return data;
+				//
 			})
 		);
 

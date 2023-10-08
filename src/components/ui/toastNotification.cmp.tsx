@@ -3,6 +3,7 @@
 import { Icons } from "@/components/Icons";
 import { classNameHelper } from "@/lib/utils";
 import * as React from "react";
+import { useRef } from "react";
 import hotToast, { Toaster as HotToaster } from "react-hot-toast";
 
 export const Toaster = HotToaster;
@@ -31,13 +32,17 @@ interface ToastIconProps extends Partial<React.SVGProps<SVGSVGElement>> {
 Toast.Icon = function ToastIcon({ name, className, ...props }: ToastIconProps) {
 	const Icon = Icons[name];
 
+	//--
+	const svgRefFixr = useRef<SVGSVGElement | null>(null);
+	//--
+
 	if (!Icon) {
 		return null;
 	}
 
 	return (
 		<div className='flex h-20 w-20 items-center justify-center rounded-full bg-slate-100'>
-			<Icon className={classNameHelper("h-10 w-10", className)} {...props} />
+			{/* <Icon className={classNameHelper("h-10 w-10", className)} {...props} /> */}
 		</div>
 	);
 };
